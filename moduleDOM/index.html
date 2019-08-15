@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <p id = "testParagraph">sample text</p>
+    <p class = "sampleClass">This paragraph has a class of sampleClass</p>
+
+    <button id="clickThisButton">I want to be clicked</button>
+
+    <label for="nameInput">Enter Your Name:</label>
+    <input type="text" id="nameInput" placeholder="John Smith" />
+
+    <p>Welcome!</p>
+    <p>No name has been entered</p>
+
+
+    <script>
+        var x = 10;
+        console.log(x);
+
+        document.getElementById('testParagraph').style.color = 'blue';
+
+        console.log(document.querySelectorAll("p.sampleClass"));
+
+        document.querySelectorAll("p.sampleClass")[0].innerText = "My text was changed";
+
+        console.log(document.querySelectorAll("p.sampleClass"));
+        document.querySelectorAll("p.sampleClass")[0].innerHTML = "<span>I am a whole new element!</span>";
+
+        document.getElementById('clickThisButton').addEventListener('click', (details) => {
+            details.target.style.backgroundColor = 'red';
+        });
+
+        document.getElementById('nameInput').addEventListener('keyup', (event) => {
+            // console.log(event.target.value);
+            // console.log(document.getElementsByTagName("p"));
+            if (event.target.value === '') {
+                document.getElementsByTagName("p")[3].innerText = `No name has been entered`;
+            } else {
+                document.getElementsByTagName("p")[3].innerText = `Everyone please welcome ${event.target.value} to the stage.`;
+            }
+        });
+
+        
+
+
+
+    </script>
+</body>
+</html>
